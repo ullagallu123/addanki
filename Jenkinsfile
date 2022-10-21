@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                sh "git --version"
+                git branch: 'dev', url: 'https://github.com/ullagallu123/addanki.git'
             }    
         }
     }
