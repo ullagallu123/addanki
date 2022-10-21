@@ -8,5 +8,11 @@ pipeline{
                 git branch: 'dev', url: 'https://github.com/ullagallu123/addanki.git'
             }    
         }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean install package"
+            }
+
+        }
     }
 }
