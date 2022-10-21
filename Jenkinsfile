@@ -1,14 +1,18 @@
 pipeline{
     agent{
-        kubernetes{
-
-        }
+        label "slave-1"
     }
     stages{
-        stage(){
-            container(){
-                
+        stage("Git Checkout"){
+            steps{
+                git branch: 'dev', url: 'https://github.com/ullagallu123/addanki.git'
+            }    
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean install package"
             }
+
         }
     }
 }
