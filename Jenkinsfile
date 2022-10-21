@@ -1,14 +1,11 @@
 pipeline{
     agent{
-        kubernetes{
-
-        }
+        label "slave-1"
     }
+    
     stages{
-        stage(){
-            container(){
-                
-            }
+        stage("Git Checkout"){
+           sh "git version"    
         }
     }
 }
